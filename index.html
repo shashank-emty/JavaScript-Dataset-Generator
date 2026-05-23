@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dataset Generator — Model A</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Dataset generator — model a</h1>
+      <p class="subtitle">Describe what you want, AI writes the training example.</p>
+
+      <section class="card">
+        <label for="apiKey">OpenAI API Key</label>
+        <input id="apiKey" type="password" placeholder="sk-..." />
+        <p class="hint">Stored only in your browser (localStorage).</p>
+      </section>
+
+      <section class="grid-2">
+        <div>
+          <label for="category">Category</label>
+          <select id="category">
+            <option>Personality — casual</option>
+            <option>Personality — warm</option>
+            <option>Simple execution</option>
+            <option>Classification</option>
+            <option>Self-limit recognition</option>
+            <option>Handoff packaging</option>
+            <option>Context gathering</option>
+            <option>Simple web search</option>
+            <option>Voice response format</option>
+            <option>Multi-user routing</option>
+            <option>Offline behaviour</option>
+            <option>Skill literacy</option>
+          </select>
+        </div>
+        <div>
+          <label for="tone">Tone hint (optional)</label>
+          <input id="tone" type="text" placeholder="e.g. user is tired, night time, guest present" />
+        </div>
+      </section>
+
+      <section>
+        <label for="scenario">Describe the scenario</label>
+        <textarea id="scenario" rows="4" placeholder="e.g. User asks to turn off all lights before sleeping. Should be a one-word confirmation, no over-explaining."></textarea>
+      </section>
+
+      <section>
+        <label for="userMessage">User message (what the user says)</label>
+        <textarea id="userMessage" rows="3" placeholder="e.g. lights off, i'm going to sleep"></textarea>
+      </section>
+
+      <div class="actions">
+        <button id="generateBtn">Generate example ↗</button>
+        <button id="clearFormBtn" class="secondary">Clear</button>
+      </div>
+
+      <section class="dataset-header">
+        <h2 id="countLabel">Dataset: 0 examples</h2>
+        <div>
+          <button id="exportBtn" class="secondary">⤓ Export JSONL</button>
+          <button id="clearDatasetBtn" class="secondary danger">🗑 Clear all</button>
+        </div>
+      </section>
+
+      <section id="output" class="output">No examples yet. Generate some above.</section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
